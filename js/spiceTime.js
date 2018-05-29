@@ -8,9 +8,12 @@ class App extends React.Component {
         this.showOtherList = this.showOtherList.bind(this);
     }
     showOtherList() {
-        //change title pops and rerender List component
-        //change innerHTML of background-list
-        //---> switch backgroundlisttitle and shownlisttitle in state
+
+        this.setState({
+            shownListTitle: this.state.backgroundListTitle,
+            backgroundListTitle: this.state.shownListTitle
+
+        })
     }
     render() {
         return (
@@ -19,8 +22,8 @@ class App extends React.Component {
                     SpiceTime
                 </div>
                 <div className="background-list" onClick={this.showOtherList}>{this.state.backgroundListTitle}</div>
-                <div className="shown-list">
-                    <List title="To Do" />
+                <div className="shown-list" onClick={this.showOtherList}>{this.state.shownListTitle}
+                    <List title={this.state.shownListTitle} />
                 </div>
             </div>
         );
@@ -37,21 +40,26 @@ class List extends React.Component {
                 [2, "My Third Task", false, true, null],
                 [3, "My Fourth Task", true, true, null],
                 [4, "", true],
-                [4, "", false]
+                [8, "", false]
             ]
         }
         this.createListItems = this.createListItems.bind(this);
     }
-
+ // make delete items button  -- this will take uniquenumber and simply do : delete listData[itemindex] 
+ //the right item index is the one with listData[itemIndex][0] = uniqueNumber
     createListItems() {
-        var showCompletedTasks = (this.props.title === "To Do") ? false : true;
+        let showCompletedTasks = (this.props.title === "To Do") ? false : true;
         let itemArr = [];
-        for (var itemNr = 0; itemNr < this.state.listData.length; itemNr++) {
-            if (this.state.listData[itemNr][2] === showCompletedTasks) {
+        for (var itemIndex = 0; itemIndex < this.state.listData.length; itemIndex++) {
+            if (this.state.listData[itemIndex][2] === showCompletedTasks) {
                 let item = (
                     <div className="list-item-container">
                         {/* done button */}
-                        <span>{this.state.listData[itemNr][1]}</span>
+                        <span>{this.state.listData[itemIndex][1]}</span>
+                        {/* <div className="mock-buttons-container">
+                            <div className="add-spice-button"></div>
+                            <div className="delete-task-button" id={"buttonFor" + this.state.listData[itemIndex][0]}></div>
+                        </div> */}
                         {/* chili button */}
                         {/* hoverButtons */}
 
@@ -80,3 +88,6 @@ function show() {
 }
 
 show();
+
+
+// make hidden buttons 
