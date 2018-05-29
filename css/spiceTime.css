@@ -37,3 +37,28 @@ body{
     left: 25vw;
     z-index: 1;
 }
+
+.mock-buttons-container{
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.add-spice-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    background-image: url("");
+    background-repeat: no-repeat;
+    display: inline-block;
+    position:absolute;
+}
+
+.delete-task-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    display: inline-block;
+}
