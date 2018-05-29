@@ -1,7 +1,6 @@
 # spiceTIME
 
 - Tasks:
-    1. make static html/css for header and full viewport background
     2. make app class
     3. make list class (can be done before 1. and 2. are ready, I could do that)
     4. make hoverButton class
@@ -9,14 +8,15 @@
 - Setup:
     - react classes:
         - App (1 instance: contains the background image and the currently shown list)
+            - static html/css for header and full viewport background
             - on click of background page:
-                - change text on background page
-                - render the other list that hasnt been shown before 
+                - change text on background page (not currently shown list)
+                - render the other list that hasnt been shown before
 
         - List (2 possible instances (only one is shown): toDoList, completedList)
-            - inside its state, List has a value listData. 
-                - ListData is a 2D array matrix, of which each inner matrix contains all the info for one list item
-                - at specific indexes of the inner matrix, specific information is represented
+            - inside its state, List has a value listData
+                - ListData is a 2D array matrix, of which each inner array item contains all the info for one list item
+                - at specific indexes of the inner array, specific information is represented
                     - e.g.: [uniqueNumber, text, isCompleted, isChili, reminder]
             - renders listItems (a function that uses .map() creates a an array of list items based on all the respective information inside listData)
                 - if the list item is empty (e.g. respective inner matrix has no text), an input field with a "add item" button appears on click/on hover
