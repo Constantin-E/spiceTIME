@@ -22,7 +22,7 @@ class App extends React.Component {
                     SpiceTime
                 </div>
                 <div className="background-list" onClick={this.showOtherList}>{this.state.backgroundListTitle}</div>
-                <div className="shown-list" onClick={this.showOtherList}>{this.state.shownListTitle}
+                <div className="shown-list">{this.state.shownListTitle}
                     <List title={this.state.shownListTitle} />
                 </div>
             </div>
