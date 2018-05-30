@@ -38,9 +38,9 @@ class List extends React.Component {
                 [0, "My First Task", false, false, null],
                 [1, "My Second Task", true, false, null],
                 [2, "My Third Task", false, true, null],
-                [3, "My Fourth Task", true, true, null],
-                [4, "", true],
-                [8, "", false]
+                [7, "My Fourth Task", true, true, null],
+                ["empty", "", false],
+                ["empty", "", true], //at least one of these should always be appended to each list in the end. if space beneath is empty (e.g. this.state.listData[itemInted][2]== true for numOfListItems element, and numOfListItems<10, fill up List with 10-numOfListItems empty items. )
             ]
         }
         this.createListItems = this.createListItems.bind(this);
