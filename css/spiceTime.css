@@ -62,6 +62,25 @@ body{
     display: inline-block;
     position:absolute;
 }
+.add-item-btn{
+    background-image: url('http://cdn.onlinewebfonts.com/svg/img_479197.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2px;
+    margin: 25px;
+}
+.add-item-btn>i{
+    font-size: 10px;
+    color: tomato;
+}
+.add-task-input{
+    border: none;
+    background-color: inherit;
+    height: 30px;
+    width: 70%;
+    font-size: 20px;
+    font-family: inherit;
+}
 
 .delete-task-button{
     width:12px;

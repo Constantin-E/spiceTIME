@@ -21,8 +21,16 @@ class App extends React.Component {
                 <div className="header">
                     SpiceTime
                 </div>
-                <div className="background-list" onClick={this.showOtherList}>{this.state.backgroundListTitle}</div>
-                <div className="shown-list">{this.state.shownListTitle}
+                <div className="background-list" onClick={this.showOtherList}><h2>{this.state.backgroundListTitle}</h2></div>
+                <div className="shown-list">
+                    <h2>
+                        {this.state.shownListTitle}
+                        <span className="add-item-btn"><i class="fas fa-plus"></i></span>
+                    </h2>
+                    <div className="list-item-container">
+                    <input type="text" placeholder="Type new task here" className="add-task-input"/>
+                    <button>Add!</button>
+                    </div>
                     <List title={this.state.shownListTitle} />
                 </div>
             </div>
@@ -43,11 +51,11 @@ class List extends React.Component {
                 ["empty", "", true], //at least one of these should always be appended to each list in the end. if space beneath is empty (e.g. this.state.listData[itemInted][2]== true for numOfListItems element, and numOfListItems<10, fill up List with 10-numOfListItems empty items. )
             ]
         }
-        this.createListItems = this.createListItems.bind(this);
+        this.showListItems = this.showListItems.bind(this);
     }
- // make delete items button  -- this will take uniquenumber and simply do : delete listData[itemindex] 
- //the right item index is the one with listData[itemIndex][0] = uniqueNumber
-    createListItems() {
+    // make delete items button  -- this will take uniquenumber and simply do : delete listData[itemindex] 
+    //the right item index is the one with listData[itemIndex][0] = uniqueNumber
+    showListItems() {
         let showCompletedTasks = (this.props.title === "To Do") ? false : true;
         let itemArr = [];
         for (var itemIndex = 0; itemIndex < this.state.listData.length; itemIndex++) {
@@ -74,7 +82,7 @@ class List extends React.Component {
     render() {
         return (
             <div>
-                {this.createListItems()}
+                {this.showListItems()}
             </div>
         )
     }
