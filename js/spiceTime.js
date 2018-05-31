@@ -25,7 +25,8 @@ class App extends React.Component {
     }
     addNewItem(newItemText) {
         this.setState({
-            newItemText: newItemText
+            newItemText: newItemText,
+            newItemFieldShown: false
         })
     }
 
@@ -61,7 +62,7 @@ class NewItemField extends React.Component {
     addItem() {
         let newItemText = this.newItemTextField.value;
         this.props.newItem(newItemText);
-        // this.newItemTextField.value = null;
+        this.newItemTextField.value = null;
     }
 
     render() {
@@ -98,10 +99,8 @@ class List extends React.Component {
         let lastItemId = currentListData[0][0];
         let newItemArr = [lastItemId + 1, this.props.newItemText, false, false, null];
         currentListData.unshift(newItemArr)
-        this.setState({
-            listData: currentListData,
-            listIsUpdated: false
-        })
+        this.state.listData = currentListData
+        
     }
     showListItems() {
         console.log("list received new item: " + this.props.newItemText);
