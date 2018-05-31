@@ -62,14 +62,14 @@ body{
     display: inline-block;
     position:absolute;
 }
-.add-item-btn{
+.add-chili-btn{
     background-image: url('http://cdn.onlinewebfonts.com/svg/img_479197.png');
     background-size: contain;
     background-repeat: no-repeat;
     padding: 2px;
     margin: 25px;
 }
-.add-item-btn>i{
+.add-chili-btn>i{
     font-size: 10px;
     color: tomato;
 }
@@ -80,6 +80,18 @@ body{
     width: 70%;
     font-size: 20px;
     font-family: inherit;
+}
+.add-btn{
+    height: 30px;
+    width: calc(30% - 30px);
+    min-width: 40px;
+    background-color: tomato;
+    color: white;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.not-displayed{
+    display: none;
 }
 
 .delete-task-button{
