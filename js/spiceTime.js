@@ -102,9 +102,10 @@ class List extends React.Component {
         this.state.listData = currentListData
         
     }
+    
     // deleteTask() {
     //     let currentListData = this.state.listData;
-    //     let lastItemId = currentListData[0][0];
+    //     let lastItemId = currentListData[0][0]; 
     //     let =
     // }
     showListItems() {
