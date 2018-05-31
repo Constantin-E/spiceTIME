@@ -118,7 +118,17 @@ class List extends React.Component {
                             <div className="add-spice-button"></div>
                             <div className="delete-task-button" id={"buttonFor" + this.state.listData[itemIndex][0]}></div>
                         </div> */}
+                        <span>
+                            {<button><i class="fa fa-trash"></i></button>}
+                        </span>
+                        <span>
+                            {<button>Complete Task<i class="fa fa-check"></i></button>}
+                        </span>
+                            {<button><i class="icofont icofont-pepper"></i></button>}
                         {/* chili button */}
+                        <span>
+                            {<button><i class="fa fa-bell"></i></button>}
+                        </span>
                         {/* hoverButtons */}
 
                     </div>
@@ -149,3 +159,21 @@ show();
 
 
 // make hidden buttons 
+
+
+/* function reminderFunction() {
+                var currentTime = new Date();
+                var h = currentTime.getHours();
+                var m = currentTime.getMinutes();
+                var s = currentTime.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+                var t = setTimeout(myClock,1000);
+                }
+    
+            function checkTime(i) {
+                if (i<10) {i = "0" + i};
+                return i;
+            }
+*/

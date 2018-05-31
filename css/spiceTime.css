@@ -16,6 +16,8 @@ body{
     background-color: rgba(0, 0, 0, 0.75);
     color: tomato;
     position: fixed;
+    text-shadow: 5px 1px rgb(159, 12, 12);
+    font-size: 50px;
 }
 .background-list{
     background-color: bisque;
@@ -94,9 +96,22 @@ body{
     display: none;
 }
 
+.complete-task-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    display: inline-block;
+}
 .delete-task-button{
     width:12px;
     height:18px;
     border:1px solid black;
     display: inline-block;
+}
+.set-reminder-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    display: inline-block;
+    background-image:url("");
 }
