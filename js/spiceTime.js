@@ -91,6 +91,7 @@ class List extends React.Component {
         }
         this.showListItems = this.showListItems.bind(this);
         this.importNewItem = this.importNewItem.bind(this);
+        this.markAsDone = this.markAsDone.bind(this);
     }
     // make delete items button  -- this will take uniquenumber and simply do : delete listData[itemindex] 
     //the right item index is the one with listData[itemIndex][0] = uniqueNumber
@@ -100,7 +101,19 @@ class List extends React.Component {
         let newItemArr = [lastItemId + 1, this.props.newItemText, false, false, null];
         currentListData.unshift(newItemArr)
         this.state.listData = currentListData
-        
+
+    }
+    markAsDone(i) {
+        // let selected = this.selectItem(e);
+        // let selectedItemIndex = i;
+        let selectedListItem = this.state.listData[i];
+        selectedListItem[2] = !selectedListItem[2];
+        let newListData = this.state.listData;
+        //push done items to the top of the array so they're shown on top of the completed list
+        newListData[i] = selectedListItem;
+        this.setState({
+            listData : newListData
+        });
     }
     showListItems() {
         console.log("list received new item: " + this.props.newItemText);
@@ -111,7 +124,7 @@ class List extends React.Component {
             if (this.state.listData[itemIndex][2] === showCompletedTasks) {
                 let item = (
                     <div className="list-item-container">
-                        {/* done button */}
+                        <button onClick={this.markAsDone(itemIndex)}><i class="fa fa-check"></i></button>
                         <span>{this.state.listData[itemIndex][1]}</span>
                         {/* <div className="mock-buttons-container">
                             <div className="add-spice-button"></div>
@@ -120,10 +133,7 @@ class List extends React.Component {
                         <span>
                             {<button><i class="fa fa-trash"></i></button>}
                         </span>
-                        <span>
-                            {<button>Complete Task<i class="fa fa-check"></i></button>}
-                        </span>
-                            {<button><i class="icofont icofont-pepper"></i></button>}
+                        {<button><i class="icofont icofont-pepper"></i></button>}
                         {/* chili button */}
                         <span>
                             {<button><i class="fa fa-bell"></i></button>}
