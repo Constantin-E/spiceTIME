@@ -103,6 +103,11 @@ class List extends React.Component {
             listIsUpdated: false
         })
     }
+    // deleteTask() {
+    //     let currentListData = this.state.listData;
+    //     let lastItemId = currentListData[0][0];
+    //     let =
+    // }
     showListItems() {
         console.log("list received new item: " + this.props.newItemText);
         (this.props.newItemText && this.state.listIsUpdated) ? this.importNewItem() : null;
