@@ -83,10 +83,22 @@ body{
     font-size: 20px;
     font-family: inherit;
 }
-
+.complete-task-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    display: inline-block;
+}
 .delete-task-button{
     width:12px;
     height:18px;
     border:1px solid black;
     display: inline-block;
+}
+.set-reminder-button{
+    width:12px;
+    height:18px;
+    border:1px solid black;
+    display: inline-block;
+    background-image:url("");
 }
