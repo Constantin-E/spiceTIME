@@ -67,16 +67,16 @@ class NewItemField extends React.Component {
     }
 
     addItem() {
-        console.log(this.textInput.value + " was found in newItemField");
         this.props.newItem(this.textInput.value);
+        $(this.textInput).val("");
     }
 
     render() {
         return (
-            <div className={"list-item-container " + this.showClass()}>
-                <input type="text" placeholder="Type new task here" className="add-task-input" ref={(input) => { this.textInput = input }} />
-                <button class="add-btn" onClick={this.addItem}>Add!</button>
-            </div>
+            <form className={"list-item-container " + this.showClass()} onSubmit={this.addItem}>
+                <input pattern="^[a-zA-Z].{1,49}$" required type="text" placeholder="Type new task here" className="add-task-input" ref={(input) => { this.textInput = input }} />
+                <input type="submit" class="add-btn" value="Add!"/>
+            </form>
         )
     }
 }
@@ -88,8 +88,8 @@ class List extends React.Component {
                 // [uniqueNumber, text, isCompleted, isChili, reminder]
                 [3, "My First Task", false, false, null],
                 [2, "My First Done Task", true, false, null],
-                [1, "My Second Task", false, true, null],
-                [0, "My Second Done Task", true, true, null],
+                [1, "My Second Task", false, false, null],
+                [0, "My Second Done Task", true, false, null],
             ],
         }
         this.showListItems = this.showListItems.bind(this);
@@ -153,6 +153,7 @@ class List extends React.Component {
                             <button onClick={this.markAsChili} listIndex={itemIndex}>Spice it up!</button>
                             <button><i class="fa fa-bell"></i></button>
                         </div>
+                        {this.state.listData[itemIndex][3] ? <i class="fa fa-fire"></i> : null}
                     </div>
                 )
                 itemArr.push(item);
@@ -179,24 +180,3 @@ function show() {
 }
 
 show();
-
-
-// make hidden buttons 
-
-
-/* function reminderFunction() {
-                var currentTime = new Date();
-                var h = currentTime.getHours();
-                var m = currentTime.getMinutes();
-                var s = currentTime.getSeconds();
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-                var t = setTimeout(myClock,1000);
-                }
-    
-            function checkTime(i) {
-                if (i<10) {i = "0" + i};
-                return i;
-            }
-*/
