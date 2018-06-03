@@ -42,9 +42,9 @@ class App extends React.Component {
                 <div className="header">
                     SpiceTime
                 </div>
-                <div className="background-list" onClick={this.showOtherList}><h2>{this.state.backgroundListTitle}</h2></div>
+                <div className="background-list" onClick={this.showOtherList}><h2 className="list-title">{this.state.backgroundListTitle}</h2></div>
                 <div className="shown-list">
-                    <h2>
+                    <h2 className="list-title">
                         {this.state.shownListTitle}
                         <span className="add-chili-btn" onClick={this.showNewItemField}><i class="fas fa-plus"></i></span>
                     </h2>
@@ -97,8 +97,6 @@ class List extends React.Component {
         this.deleteItem = this.deleteItem.bind(this);
         this.markAsChili = this.markAsChili.bind(this);
     }
-    // make delete items button  -- this will take uniquenumber and simply do : delete listData[itemindex] 
-    //the right item index is the one with listData[itemIndex][0] = uniqueNumber
 
     componentWillReceiveProps(nextProps) {
         console.log("check to update listadata fires");
