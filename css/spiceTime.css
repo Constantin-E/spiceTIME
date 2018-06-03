@@ -8,7 +8,6 @@ body{
     width: 100vw;
     text-align: center;
     font-size: 24px;
-
 }
 .header{
     height: 80px;
@@ -39,6 +38,9 @@ body{
     left: 25vw;
     z-index: 1;
     overflow:auto;
+}
+.list-title{
+    font-size: 24px;
 }
 .list-item-container{
     border-bottom: solid 1px black;
@@ -74,11 +76,11 @@ body{
     background-image: url('http://cdn.onlinewebfonts.com/svg/img_479197.png');
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 2px;
-    margin: 25px;
+    padding: 6px;
+    margin: 20px;
 }
 .add-chili-btn>i{
-    font-size: 10px;
+    font-size: 20px;
     color: tomato;
 }
 .add-task-input{
