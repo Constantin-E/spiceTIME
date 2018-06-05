@@ -24,16 +24,10 @@ class App extends React.Component {
         });
     }
     addNewItem(textInput) {
-        console.log(textInput + " was found in App");
-
-        // this.state.newItemFieldShown = false;
         this.setState({
             newItemFieldShown: false,
             newInputText: textInput
         })
-        //add text input to state
-        // pass that new state value as props neItemText to List
-        //in List, create and unshift new item and re render
     }
 
     render() {
@@ -99,7 +93,6 @@ class List extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("check to update listadata fires");
         if (nextProps.newItemText != this.state.listData[0][1] && nextProps.newItemText != null) {
             let currentListData = this.state.listData;
             let lastItemId = currentListData[0][0];
